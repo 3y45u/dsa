@@ -45,7 +45,7 @@ public class LC3203 {
         int d1 = findDiameter(n, adj1);
         int d2 = findDiameter(m, adj2);
 
-        int merged = (d1 + 1) / 2 + (d2 + 1) / 2 + 1;
+        int merged = ((d1 + 1) / 2) + ((d2 + 1) / 2) + 1;
 
         int res = Math.max(Math.max(d1, d2), merged);
 
@@ -78,7 +78,7 @@ public class LC3203 {
 
                 farthest = cur;
 
-                for (int v : adj.get(source)) {
+                for (int v : adj.get(cur)) {
                     if (!vis[v]) {
                         que.offer(v);
                         vis[v] = true;
